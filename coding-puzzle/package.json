@@ -1,0 +1,19 @@
+{
+  "name": "coding-puzzle",
+  "version": "1.0.0",
+  "private": true,
+  "description": "반짝이 코딩 퍼즐 — 만 10세 아이를 위한 블록 코딩 놀이 (빌드 없는 정적 웹앱)",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "node --test tests/engine.test.mjs tests/levels.test.mjs tests/app-files.test.mjs",
+    "test:e2e": "node --test tests/e2e.test.mjs",
+    "test:all": "npm test && npm run test:e2e",
+    "solve": "node tools/solver.mjs",
+    "icons": "node tools/make-icons.mjs",
+    "screenshots": "node tools/screenshots.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}
