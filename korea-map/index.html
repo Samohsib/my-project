@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#1f6f8b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="지도 탐험">
+<meta name="description" content="탐험가 달수와 함께 우리나라 시·도, 도시, 명소, 산과 강을 찾아 도장을 모으는 지도 놀이">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/app.css">
+<title>우리나라 지도 탐험</title>
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <button class="btn-ghost" id="backBtn" type="button" hidden>◀ 처음으로</button>
+    <h1 class="brand" id="brand">우리나라 지도 탐험</h1>
+    <div class="sp"></div>
+    <button class="pill" id="stampPill" type="button" aria-label="도장 수첩 열기">도장 <b id="stampCount">0</b>개</button>
+    <button class="pill" id="soundBtn" type="button" aria-pressed="true">소리 켜짐</button>
+  </header>
+
+  <main>
+    <!-- 처음 화면 -->
+    <section class="screen" id="home" data-screen="home">
+      <div class="home-hero">
+        <div class="hero-otter" id="homeOtter"></div>
+        <div class="bubble big" id="homeBubble">안녕! 나는 탐험가 <b>달수</b>야. 지도를 손가락으로 눌러서 우리나라 곳곳을 찾아보자. 맞히면 도장을 받아!</div>
+      </div>
+      <div class="stage-grid" id="stageGrid"></div>
+      <div class="home-links">
+        <button class="btn big book-btn" id="openBook" type="button">도장 수첩 보기</button>
+        <button class="btn-ghost" id="openAbout" type="button">자료 출처 · 도움말</button>
+      </div>
+    </section>
+
+    <!-- 놀이 화면 -->
+    <section class="screen" id="play" data-screen="play">
+      <div class="map-wrap" id="mapHost">
+        <div class="zoom-ctl">
+          <button type="button" id="zoomIn" aria-label="크게">＋</button>
+          <button type="button" id="zoomOut" aria-label="작게">－</button>
+          <button type="button" id="zoomReset" aria-label="전체 보기" class="zr">전체</button>
+        </div>
+        <div class="map-tip" id="mapTip">두 손가락으로 벌리면 크게 볼 수 있어요</div>
+      </div>
+      <aside class="panel">
+        <div class="panel-top">
+          <span class="chip" id="stageChip">1단계</span>
+          <span class="progress" id="qProgress">1 / 8</span>
+        </div>
+        <div class="guide">
+          <div class="guide-otter" id="guideOtter"></div>
+          <div class="bubble" id="prompt" aria-live="polite">문제</div>
+        </div>
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+        <div class="panel-btns">
+          <button class="btn" id="hintBtn" type="button">힌트 보기</button>
+          <button class="btn" id="replayBtn" type="button">다시 듣기</button>
+        </div>
+      </aside>
+
+      <div class="overlay" id="result" hidden>
+        <div class="card result-card">
+          <div class="result-top">
+            <div class="result-icon" id="resIcon"></div>
+            <div class="result-stamp" id="resStamp"></div>
+          </div>
+          <div class="result-title" id="resTitle"></div>
+          <div class="result-sub" id="resSub"></div>
+          <p class="result-fact" id="resFact"></p>
+          <button class="btn big primary" id="nextBtn" type="button">다음 문제 ▶</button>
+        </div>
+      </div>
+
+      <div class="overlay" id="summary" hidden>
+        <div class="card summary-card">
+          <div class="summary-otter" id="sumOtter"></div>
+          <h2 id="sumTitle">한 판 끝!</h2>
+          <p id="sumText"></p>
+          <div class="mini-stamps" id="sumStamps"></div>
+          <div class="summary-btns">
+            <button class="btn big primary" id="againBtn" type="button">한 판 더</button>
+            <button class="btn big" id="sumBook" type="button">도장 수첩</button>
+            <button class="btn big" id="sumHome" type="button">처음으로</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 도장 수첩 -->
+    <section class="screen" id="book" data-screen="book">
+      <h2 class="screen-title">지역 도장 수첩</h2>
+      <p class="screen-sub" id="bookSub"></p>
+      <div class="book-grid" id="bookGrid"></div>
+      <div class="overlay" id="pageView" hidden>
+        <div class="card page-card">
+          <div class="page-head">
+            <div class="page-shape" id="pageShape"></div>
+            <div>
+              <h3 id="pageTitle"></h3>
+              <div class="page-office" id="pageOffice"></div>
+            </div>
+            <button class="btn-ghost close" id="pageClose" type="button" aria-label="닫기">닫기</button>
+          </div>
+          <p class="page-fact" id="pageFact"></p>
+          <div class="page-stamps" id="pageStamps"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 자료 출처 -->
+    <section class="screen" id="about" data-screen="about">
+      <h2 class="screen-title">자료 출처 · 도움말</h2>
+      <div class="about" id="aboutBody"></div>
+    </section>
+  </main>
+</div>
+<div class="loading" id="loading">지도를 펼치는 중…</div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "about": "시·도 16곳 (2026년 10월 기준). 경계는 data/geo/sido.json 의 code 와 짝이 맞는다.",
+    "asOf": "2026-10-30",
+    "sources": [
+      { "title": "admdongkor 시도 경계 2026-10-01 시점 (통계청 SGIS 가공)", "url": "https://github.com/vuski/admdongkor" },
+      { "title": "뉴시스 2026-03-01 「40년 만에 '한 지붕'…광주·전남 통합시대 7월 개막」", "url": "https://www.newsis.com/view/NISX20260301_0003531085" },
+      { "title": "경향신문 2026-07-01 「'대한민국 1호' 전남광주통합특별시 출범」", "url": "https://www.khan.co.kr/article/202607010351001" },
+      { "title": "Wikidata 시·도 소재지(P36)", "url": "https://www.wikidata.org/wiki/Property:P36" }
+    ]
+  },
+  "regions": [
+    {
+      "code": "11", "id": "seoul", "name": "서울특별시", "short": "서울", "kind": "특별시",
+      "office": { "label": "서울특별시청", "place": "서울특별시 중구", "cities": [] },
+      "fact": "우리나라의 수도예요. 한강이 도시 한가운데를 흘러요.",
+      "sources": [{ "title": "서울특별시 누리집", "url": "https://www.seoul.go.kr" }, { "title": "Wikidata Q8684", "url": "https://www.wikidata.org/wiki/Q8684" }]
+    },
+    {
+      "code": "12", "id": "jeonnam-gwangju", "name": "전남광주통합특별시", "short": "전남광주", "kind": "통합특별시",
+      "office": {
+        "label": "전남광주통합특별시청 (청사 3곳)",
+        "place": "광주청사(광주 서구) · 무안청사(무안군 삼향읍) · 동부청사(순천시 해룡면)",
+        "cities": ["gwangju", "muan", "suncheon"],
+        "note": "특별법은 세 청사를 균형 있게 쓰도록 정했어요. 주사무소 한 곳을 따로 정했는지는 확인 필요."
+      },
+      "fact": "2026년 7월 1일, 전라남도와 광주광역시가 하나로 합쳐져 새로 생겼어요.",
+      "sources": [
+        { "title": "뉴시스 2026-03-01 (청사 3곳 균형 운영)", "url": "https://www.newsis.com/view/NISX20260301_0003531085" },
+        { "title": "경향신문 2026-07-01 (출범, 전라남도·광주광역시 폐지)", "url": "https://www.khan.co.kr/article/202607010351001" },
+        { "title": "농민신문 2026-06-19 (주사무소 논의)", "url": "https://www.nongmin.com/article/20260619500135" },
+        { "title": "Wikidata Q138870299", "url": "https://www.wikidata.org/wiki/Q138870299" }
+      ]
+    },
+    {
+      "code": "26", "id": "busan", "name": "부산광역시", "short": "부산", "kind": "광역시",
+      "office": { "label": "부산광역시청", "place": "부산광역시 연제구", "cities": [] },
+      "fact": "우리나라에서 가장 큰 항구가 있는 바닷가 도시예요.",
+      "sources": [{ "title": "부산광역시 누리집", "url": "https://www.busan.go.kr" }, { "title": "Wikidata Q16520", "url": "https://www.wikidata.org/wiki/Q16520" }]
+    },
+    {
+      "code": "27", "id": "daegu", "name": "대구광역시", "short": "대구", "kind": "광역시",
+      "office": { "label": "대구광역시청", "place": "동인청사(중구) · 산격청사(북구)", "cities": [], "note": "두 청사를 함께 쓰고 있어요. 새 청사는 달서구에 지을 예정이에요." },
+      "fact": "2023년 7월에 경상북도 군위군이 대구광역시로 들어왔어요.",
+      "sources": [{ "title": "대구광역시 누리집 (청사 안내)", "url": "https://www.daegu.go.kr" }, { "title": "매일신문 2025-11-25 (산격청사·신청사)", "url": "https://www.imaeil.com/page/view/2025112511325923905" }, { "title": "admdongkor 2026-10-01 (군위군 → 대구)", "url": "https://github.com/vuski/admdongkor" }]
+    },
+    {
+      "code": "28", "id": "incheon", "name": "인천광역시", "short": "인천", "kind": "광역시",
+      "office": { "label": "인천광역시청", "place": "인천광역시 남동구", "cities": [] },
+      "fact": "하늘길의 관문인 인천국제공항과 서해의 많은 섬이 있어요.",
+      "sources": [{ "title": "인천광역시 누리집", "url": "https://www.incheon.go.kr" }, { "title": "Wikidata Q20934", "url": "https://www.wikidata.org/wiki/Q20934" }]
+    },
+    {
+      "code": "30", "id": "daejeon", "name": "대전광역시", "short": "대전", "kind": "광역시",
+      "office": { "label": "대전광역시청", "place": "대전광역시 서구", "cities": [] },
+      "fact": "1993년 대전 엑스포가 열렸던 과학의 도시예요.",
+      "sources": [{ "title": "대전광역시 누리집", "url": "https://www.daejeon.go.kr" }, { "title": "Wikidata Q20921", "url": "https://www.wikidata.org/wiki/Q20921" }]
+    },
+    {
+      "code": "31", "id": "ulsan", "name": "울산광역시", "short": "울산", "kind": "광역시",
+      "office": { "label": "울산광역시청", "place": "울산광역시 남구", "cities": [] },
+      "fact": "자동차와 배를 만드는 큰 공장이 많은 산업 도시예요.",
+      "sources": [{ "title": "울산광역시 누리집", "url": "https://www.ulsan.go.kr" }, { "title": "Wikidata Q41278", "url": "https://www.wikidata.org/wiki/Q41278" }]
+    },
+    {
+      "code": "36", "id": "sejong", "name": "세종특별자치시", "short": "세종", "kind": "특별자치시",
+      "office": { "label": "세종특별자치시청", "place": "세종특별자치시 보람동", "cities": [] },
+      "fact": "정부 부처가 많이 모여 있는 행정 중심 도시예요. 2012년에 생겼어요.",
+      "sources": [{ "title": "세종특별자치시 누리집", "url": "https://www.sejong.go.kr" }, { "title": "Wikidata Q20929", "url": "https://www.wikidata.org/wiki/Q20929" }]
+    },
+    {
+      "code": "41", "id": "gyeonggi", "name": "경기도", "short": "경기", "kind": "도",
+      "office": { "label": "경기도청", "place": "수원시 영통구", "cities": ["suwon"] },
+      "fact": "우리나라 시·도 가운데 사람이 가장 많이 살아요.",
+      "sources": [{ "title": "경기도 누리집", "url": "https://www.gg.go.kr" }, { "title": "Wikidata Q20937 (소재지: 수원시)", "url": "https://www.wikidata.org/wiki/Q20937" }]
+    },
+    {
+      "code": "43", "id": "chungbuk", "name": "충청북도", "short": "충북", "kind": "도",
+      "office": { "label": "충청북도청", "place": "청주시 상당구", "cities": ["cheongju"] },
+      "fact": "우리나라 도 가운데 바다와 닿지 않은 유일한 곳이에요.",
+      "sources": [{ "title": "충청북도 누리집", "url": "https://www.chungbuk.go.kr" }, { "title": "Wikidata Q41066 (소재지: 청주시)", "url": "https://www.wikidata.org/wiki/Q41066" }]
+    },
+    {
+      "code": "44", "id": "chungnam", "name": "충청남도", "short": "충남", "kind": "도",
+      "office": { "label": "충청남도청", "place": "홍성군 홍북읍 (내포신도시)", "cities": ["hongseong"] },
+      "fact": "서해안을 따라 갯벌과 해수욕장이 많아요.",
+      "sources": [{ "title": "충청남도 누리집", "url": "https://www.chungnam.go.kr" }, { "title": "Wikidata Q41070 (소재지: 홍성군)", "url": "https://www.wikidata.org/wiki/Q41070" }]
+    },
+    {
+      "code": "47", "id": "gyeongbuk", "name": "경상북도", "short": "경북", "kind": "도",
+      "office": { "label": "경상북도청", "place": "안동시 풍천면", "cities": ["andong"] },
+      "fact": "우리나라 시·도 가운데 가장 넓어요. 울릉도와 독도도 경상북도에 속해요.",
+      "sources": [{ "title": "경상북도 누리집", "url": "https://www.gb.go.kr" }, { "title": "Wikidata Q41154 (소재지: 안동시)", "url": "https://www.wikidata.org/wiki/Q41154" }]
+    },
+    {
+      "code": "48", "id": "gyeongnam", "name": "경상남도", "short": "경남", "kind": "도",
+      "office": { "label": "경상남도청", "place": "창원시 의창구", "cities": ["changwon"] },
+      "fact": "남해안에 크고 작은 섬이 아주 많아요.",
+      "sources": [{ "title": "경상남도 누리집", "url": "https://www.gyeongnam.go.kr" }, { "title": "Wikidata Q41151 (소재지: 창원시)", "url": "https://www.wikidata.org/wiki/Q41151" }]
+    },
+    {
+      "code": "50", "id": "jeju", "name": "제주특별자치도", "short": "제주", "kind": "특별자치도",
+      "office": { "label": "제주특별자치도청", "place": "제주시", "cities": ["jeju"] },
+      "fact": "우리나라에서 가장 큰 섬인 제주도가 있어요. 2006년에 특별자치도가 되었어요.",
+      "sources": [{ "title": "제주특별자치도 누리집", "url": "https://www.jeju.go.kr" }, { "title": "Wikidata Q41164 (소재지: 제주시)", "url": "https://www.wikidata.org/wiki/Q41164" }]
+    },
+    {
+      "code": "51", "id": "gangwon", "name": "강원특별자치도", "short": "강원", "kind": "특별자치도",
+      "office": { "label": "강원특별자치도청", "place": "춘천시", "cities": ["chuncheon"] },
+      "fact": "2023년 6월 11일에 강원도에서 강원특별자치도로 이름이 바뀌었어요.",
+      "sources": [{ "title": "강원특별자치도 누리집", "url": "https://state.gwd.go.kr" }, { "title": "Wikidata Q41071 (소재지: 춘천시)", "url": "https://www.wikidata.org/wiki/Q41071" }]
+    },
+    {
+      "code": "52", "id": "jeonbuk", "name": "전북특별자치도", "short": "전북", "kind": "특별자치도",
+      "office": { "label": "전북특별자치도청", "place": "전주시 완산구", "cities": ["jeonju"] },
+      "fact": "2024년 1월 18일에 전라북도에서 전북특별자치도로 이름이 바뀌었어요.",
+      "sources": [{ "title": "전북특별자치도 누리집", "url": "https://www.jeonbuk.go.kr" }, { "title": "Wikidata Q41157 (소재지: 전주시)", "url": "https://www.wikidata.org/wiki/Q41157" }]
+    }
+  ]
+}
