@@ -1,6 +1,6 @@
 // 분수·소수 퍼즐 오프라인 캐시 (홈 화면 앱용)
 // 앱을 고쳐서 다시 올릴 때마다 아래 버전 숫자를 하나씩 올려 주세요 (v1 → v2 ...)
-const CACHE = 'fraction-puzzle-v1';
+const CACHE = 'fraction-puzzle-v2';
 const ASSETS = [
   './',
   './index.html',

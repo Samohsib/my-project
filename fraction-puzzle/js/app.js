@@ -166,9 +166,10 @@ function confetti() {
     c.style.setProperty('--rot', `${Math.random() * 720 - 360}deg`);
     box.appendChild(c);
   }
-  box.classList.remove('go');
+  // 'go'는 초록 단추(.go)와 이름이 겹쳐 화면 전체가 초록으로 덮였다 — 색종이만의 이름을 쓴다
+  box.classList.remove('falling');
   void box.offsetWidth;
-  box.classList.add('go');
+  box.classList.add('falling');
 }
 
 function openSheet(build, kind) {

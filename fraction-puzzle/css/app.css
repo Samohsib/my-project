@@ -334,7 +334,7 @@ h1 { font-size: 1.55rem; font-weight: 900; letter-spacing: -.02em; }
 /* 축하 색종이 */
 .confetti { position: fixed; inset: 0; pointer-events: none; z-index: 60; overflow: hidden; }
 .confetti i { position: absolute; top: -20px; width: 12px; height: 18px; border-radius: 3px; opacity: 0; }
-.confetti.go i { animation: fall 1.4s ease-in forwards; }
+.confetti.falling i { animation: fall 1.4s ease-in forwards; }
 @keyframes fall {
   0% { opacity: 1; transform: translate(0, 0) rotate(0); }
   100% { opacity: 0; transform: translate(var(--dx), 92vh) rotate(var(--rot)); }
