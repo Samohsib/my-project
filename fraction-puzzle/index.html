@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#ff8a3d">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="분수·소수 퍼즐">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/app.css">
+<title>조각조각 분수·소수 퍼즐</title>
+</head>
+<body data-screen="home">
+<div id="app">
+
+  <section class="screen on" id="home">
+    <header class="top">
+      <div class="brand">
+        <div class="home-buddy" id="homeBuddy"></div>
+        <div>
+          <h1>조각조각 분수·소수 퍼즐</h1>
+          <p class="sub">나누고, 칠하고, 옮기면서 분수와 소수를 알아봐요!</p>
+        </div>
+      </div>
+      <div class="top-btns">
+        <button class="icon-btn" data-act="voice" aria-label="음성 안내 끄기">🔊</button>
+        <button class="icon-btn" data-act="settings" aria-label="설정">⚙️</button>
+      </div>
+    </header>
+    <div class="units" id="unitList"></div>
+  </section>
+
+  <section class="screen" id="unitScreen">
+    <header class="bar">
+      <button class="back" data-act="home" aria-label="처음 화면으로">←</button>
+      <h2 id="unitTitle"></h2>
+      <button class="icon-btn" data-act="voice" aria-label="음성 안내 끄기">🔊</button>
+    </header>
+    <div class="unit-body">
+      <div class="unit-intro"><div class="unit-buddy" id="unitBuddy"></div><p id="unitAbout"></p></div>
+      <div class="levels" id="levelList"></div>
+      <p class="unit-tip">한 판은 문제 3개예요. 한 번도 안 틀리면 별 3개! 판을 끝내면 다음 판이 열려요.</p>
+    </div>
+  </section>
+
+  <section class="screen" id="play">
+    <header class="bar">
+      <button class="back" data-act="leave" aria-label="그만하고 나가기">←</button>
+      <div class="where" id="where"></div>
+      <div class="dots" id="dots"></div>
+      <button class="icon-btn" data-act="voice" aria-label="음성 안내 끄기">🔊</button>
+    </header>
+    <div class="ask">
+      <div class="buddy" id="buddy"></div>
+      <div class="bubble" id="bubble"></div>
+      <button class="icon-btn small" data-act="repeat" aria-label="문제 다시 듣기">🔈</button>
+    </div>
+    <div class="work">
+      <div class="stage" id="stage"></div>
+      <div class="side" id="side"></div>
+    </div>
+  </section>
+
+</div>
+
+<div class="sheet" id="sheet" hidden><div class="sheet-card" id="sheetCard"></div></div>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
