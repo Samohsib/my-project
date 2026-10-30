@@ -1,0 +1,18 @@
+{
+  "name": "logic-puzzles",
+  "version": "1.0.0",
+  "private": true,
+  "description": "논리 퍼즐 모음 — 스도쿠·네모로직·부등호 퍼즐 (아이패드용 정적 웹앱)",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "node --test \"tests/unit/*.test.js\"",
+    "test:e2e": "node --test --test-concurrency=1 \"tests/e2e/*.test.js\"",
+    "test:all": "npm test && npm run test:e2e",
+    "icons": "node tools/make-icons.js",
+    "screenshots": "node tools/screenshots.js"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}
