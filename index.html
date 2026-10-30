@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1e293b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="놀이 앱">
+  <title>놀이 앱 고르기</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      padding: max(24px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+    }
+    main { max-width: 980px; margin: 0 auto; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 8px 0 4px; letter-spacing: -0.02em; }
+    .sub { color: var(--muted); font-size: 1.15rem; margin: 0 0 24px; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+    a.app {
+      display: flex; align-items: center; gap: 18px;
+      min-height: 150px; padding: 20px 22px;
+      background: var(--card); color: inherit; text-decoration: none;
+      border-radius: 26px; border-top: 8px solid var(--c);
+      box-shadow: 0 6px 0 rgba(30, 41, 59, 0.08), 0 10px 24px rgba(30, 41, 59, 0.06);
+      transition: transform 0.12s ease;
+    }
+    a.app:active { transform: scale(0.97); }
+    a.app img { width: 92px; height: 92px; border-radius: 22px; flex: none; background: var(--c); }
+    a.app b { display: block; font-size: 1.5rem; margin-bottom: 6px; }
+    a.app span { color: var(--muted); font-size: 1.05rem; line-height: 1.45; }
+    .tip { margin-top: 26px; color: var(--muted); font-size: 0.98rem; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>오늘은 뭐 하고 놀까?</h1>
+    <p class="sub">하고 싶은 놀이를 눌러 봐요.</p>
+    <div class="grid">
+      <a class="app" href="./coding-puzzle/" style="--c:#2563eb">
+        <img src="./coding-puzzle/icons/icon-180.png" alt="">
+        <div><b>반짝이 코딩 퍼즐</b><span>명령 블록을 쌓아 로봇 반짝이를 깃발까지 데려가요.</span></div>
+      </a>
+      <a class="app" href="./fraction-puzzle/" style="--c:#ff8a3d">
+        <img src="./fraction-puzzle/icons/icon-180.png" alt="">
+        <div><b>조각조각 분수·소수</b><span>피자를 나누고 막대를 칠하며 분수와 소수를 풀어요.</span></div>
+      </a>
+      <a class="app" href="./korea-map/" style="--c:#1f6f8b">
+        <img src="./korea-map/icons/icon-180.png" alt="">
+        <div><b>우리나라 지도 탐험</b><span>지도를 눌러 시·도와 명소를 맞히고 도장을 모아요.</span></div>
+      </a>
+      <a class="app" href="./logic-puzzles/" style="--c:#6c5ce7">
+        <img src="./logic-puzzles/icons/icon-180.png" alt="">
+        <div><b>논리 퍼즐 모음</b><span>스도쿠·네모로직·부등호 퍼즐로 머리를 써요.</span></div>
+      </a>
+    </div>
+    <p class="tip">아이패드 사파리에서 놀이를 연 뒤 공유 단추 → '홈 화면에 추가'를 누르면 앱처럼 쓸 수 있어요. 한 번 열어 둔 놀이는 인터넷이 없어도 열려요.</p>
+  </main>
+</body>
+</html>
