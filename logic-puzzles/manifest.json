@@ -1,0 +1,17 @@
+{
+  "name": "논리 퍼즐 모음",
+  "short_name": "논리 퍼즐",
+  "description": "스도쿠·네모로직·부등호 퍼즐을 매일 새 판으로 즐기는 아이용 논리 퍼즐 모음",
+  "lang": "ko",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f2e8",
+  "theme_color": "#6c5ce7",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

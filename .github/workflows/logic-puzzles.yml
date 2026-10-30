@@ -1,0 +1,51 @@
+# 논리 퍼즐 모음(logic-puzzles/) 시험을 자동으로 돌린다.
+# logic-puzzles/ 폴더나 이 파일이 바뀔 때만 돈다 (다른 앱 폴더의 변경에는 돌지 않는다).
+name: 논리 퍼즐 모음 시험
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'logic-puzzles/**'
+      - '.github/workflows/logic-puzzles.yml'
+  pull_request:
+    paths:
+      - 'logic-puzzles/**'
+      - '.github/workflows/logic-puzzles.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: logic-puzzles-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: 단위 시험 + 아이패드 터치 시험
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: logic-puzzles
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: logic-puzzles/package-lock.json
+
+      - name: 시험 도구 설치
+        run: npm ci
+
+      - name: 단위 시험 (해가 하나인지 · 같은 날 같은 판 · 정답 판정)
+        run: npm test
+
+      - name: 크로미엄 설치
+        run: npx playwright install --with-deps chromium
+
+      - name: 아이패드 크기 터치 시험 (1024×768 · 768×1024)
+        run: npm run test:e2e
