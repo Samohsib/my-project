@@ -159,6 +159,10 @@ npm run test:e2e
   - 부등호 어기면 빨간 기호, 끝까지 풀기 / 잠긴 단계 막기.
   - 모든 화면에서 바깥 주소 요청이 0개인지, 서비스 워커 캐시 후 **오프라인**에서도 열리는지.
 
+**자동 시험(GitHub Actions)**: 저장소 루트의 `.github/workflows/logic-puzzles.yml` 이
+`logic-puzzles/` 가 바뀐 PR과 `main` 에 올린 커밋마다 위 두 시험을 돌립니다(다른 앱 폴더만 바뀌면 돌지 않습니다).
+결과는 PR의 Checks 칸과 저장소의 Actions 탭에서 볼 수 있고, Actions 탭에서 "Run workflow"로 손으로 돌릴 수도 있습니다.
+
 스크린샷은 `npm run screenshots` 로 `docs/` 에 다시 찍을 수 있습니다(날짜를 2026-10-30으로 고정해 찍습니다).
 앱 아이콘 PNG는 `npm run icons` 로 `icons/icon.svg` 에서 다시 만듭니다.
 
